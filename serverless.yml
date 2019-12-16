@@ -1,0 +1,24 @@
+
+
+service: lambda
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  # environment:
+  #   AAD_CLIENT_ID='5c60fd4e-c8cf-4725-b06a-1b044c3e7696'
+  #   AAD_SECRET=']=89NG@-R0kRmKjrcu746=qm:TiUS_Hf'
+  #   AAD_TENANT_ID='ce8a2002-448f-4f58-82b1-d86f73e3afdd'
+  #   SUBSCRIPTION_ID='d8110d5f-7d16-400c-a1de-46df1d6f3854'
+  #   RESOURCE_GROUP='boxskillresource'
+  #   ACCOUNT_NAME='boxskillmedia'
+  #   REGION='West US'
+  #   LANGUAGE='en-US'
+
+functions:
+  app:
+    handler: index.handler
+    events:
+     - http:
+         path: users/create
+         method: any
